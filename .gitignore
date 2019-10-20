@@ -1,0 +1,16 @@
+venv 
+myenv 
+*.pyc 
+staticfiles 
+.env 
+*.sqlite3 
+_build 
+_static 
+_templates 
+*.ipynb 
+.ipynb_checkpoints 
+.idea 
+reports 
+test.py 
+.vscode 
+logfile
