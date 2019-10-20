@@ -1,1 +1,1 @@
-web: gunicorn watchdog.wsgi --log-file 
+web: gunicorn allAboutProjects.wsgi --log-file
