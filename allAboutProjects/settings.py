@@ -94,7 +94,8 @@ DATABASES = {
 }
 
 # Change 'default' database configuration with $DATABASE_URL. 
-DATABASES['default'].update(dj_database_url.config(conn_max_age=500))
+db_from_env = dj_database_url.config(conn_max_age=500, ssl_require=True) 
+DATABASES['default'].update(db_from_env)
 
 # Password validation
 # https://docs.djangoproject.com/en/2.2/ref/settings/#auth-password-validators
