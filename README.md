@@ -5,7 +5,7 @@ INPUT JSON:
 ```json{
 	"student_answer": "Hello world",
 	"ideal_answer": "okay world"
-}
+}```
 OUTPUT JSON:
 ```json{
     "status": true,
@@ -16,4 +16,4 @@ OUTPUT JSON:
         "token_set_ratio_algorithm": 67,
         "partial_ratio_algorithm": 70
     }
-}
+}```
