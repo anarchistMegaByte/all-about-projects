@@ -38,6 +38,7 @@ INSTALLED_APPS = [
 	'django.contrib.sessions',
 	'django.contrib.messages',
 	'django.contrib.staticfiles',
+	'ocr'
 ]
 
 MIDDLEWARE = [
@@ -93,8 +94,9 @@ DATABASES = {
 	}  
 }
 
-# Change 'default' database configuration with $DATABASE_URL. 
-db_from_env = dj_database_url.config(conn_max_age=500, ssl_require=True) 
+# Change 'default' database configuration with $DATABASE_URL.
+ssl_require = os.environ['ENV'] != 'dev' 
+db_from_env = dj_database_url.config(conn_max_age=500, ssl_require=ssl_require) 
 DATABASES['default'].update(db_from_env)
 
 # Password validation
@@ -136,3 +138,7 @@ PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))  #this line is added
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(PROJECT_ROOT, 'static') # this line is added
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage' 
+
+
+DEFAULT_RESPONSE_DICT = {"status": False, "message":"Invalid Request.", "data":{}}
+DEFAULT_RESPONSE_LIST = {"status": False, "message":"Invalid Request.", "data":[]}
